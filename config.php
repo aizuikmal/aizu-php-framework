@@ -13,6 +13,6 @@ $oauth_clientid = '';
 $oauth_secretkey = '';
 $oauth_redirect = 'https://domain.com/?goog_auth_login=true';
 
-$cache_dir = '/var/www/html/dashboard.metrics.news/cache';
+$cache_dir = '/var/www/html/.../cache';
 
 ?>
