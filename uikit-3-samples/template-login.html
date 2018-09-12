@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Login</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.11/css/uikit.min.css"/>
+		<link href="uikit" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.11/js/uikit.min.js" 
+				integrity="sha256-uIoU015jY2XsmbFtIjpet+eU+0GM/Y+zaGlNngZTKuw=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.11/js/uikit-icons.min.js" 
+				integrity="sha256-92V223qt9YYY7xHag8ctb7dvCKnK5sv/psCFHnAtZoU=" crossorigin="anonymous"></script>
+
+        <style>
+            * { font-family: 'Open Sans', 'Montserrat', sans-serif; }
+        </style>
+	</head>
+	<body>
+		
+		<div class="uk-container">
+
+            <div class="uk-text-center uk-margin-large-top uk-margin-large-bottom">
+                <h1 style="font-weight:200;">Application Title</h1>
+            </div>
+            
+                    <div class="uk-card uk-card-small uk-card-default uk-align-center" style="width:300px;">
+
+                        <div class="uk-card-header">
+                            <h3 class="uk-card-title">Login</h3>
+                            <p>Type your assigned username & password below.</p>
+                        </div>
+                        <div class="uk-card-body">
+
+                            <form method="POST">
+
+                                <div class="uk-inline">
+                                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                    <input class="uk-input" type="text" name="username" id="username">
+                                </div>
+                                
+                                <div class="uk-inline uk-margin">
+                                    <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                    <input class="uk-input" type="password" name="password" id="password">
+                                </div>
+
+                                <input class="uk-button uk-button-primary" type="submit" name="submit">
+
+                                <script type="text/javascript">
+                                    document.getElementById('username').focus();
+                                </script>
+                            </form>
+
+                        </div>
+                    </div>
+			
+
+		</div>
+
+	</body>
+</html>

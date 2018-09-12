@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title>Template</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="/favicon.png">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!--uikit framework-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.11/css/uikit.min.css"/>
+		<link href="uikit" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.11/js/uikit.min.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.11/js/uikit-icons.min.js"></script>
+
+        <!--additional fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
+
+        <!--datepicker-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+        <!--chartjs-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+
+        <script>
+
+            $(document).ready(function(){
+
+                $('.date_picker').flatpickr({
+                    altInput: true,
+                    altFormat: "j F Y",
+                    dateFormat: "Y-m-d",
+                });
+                
+
+            });
+
+        </script>
+
+        <style>
+            * { font-family: 'Open Sans', 'Montserrat', sans-serif; }
+        </style>
+
+
+	</head>
+	<body>
+		
+		<div class="uk-container">
+
+            <nav class="uk-navbar-container uk-margin-top uk-visible@s" style="background:none;" uk-navbar>
+                <div class="uk-navbar-left">
+                    <ul class="uk-navbar-nav">
+                        <li>
+                            <h1 style="font-weight:200;" class="uk-margin-right">Application Title</h1>
+                        </li>
+                        <li class="uk-active"><a href="/">Home</a></li>
+                        <li><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Menu 3</a></li>
+                        <li><a href="#"><span uk-icon="icon: lock"></span>&nbsp; Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <h1 style="font-weight:200;" class="uk-margin-right uk-hidden@s">Application Title</h1>
+            <nav class="uk-navbar-container uk-hidden@s" style="background:none;" uk-navbar>
+                <div class="uk-navbar-left">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="/">Home</a></li>
+                        <li><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Menu 3</a></li>
+                        <li><a href="?logout"><span uk-icon="icon: lock"></span>&nbsp; Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+			<hr />
+
+
+
+                <!--START-->
+
+
+                    <span uk-icon="icon: warning; ratio: 2"></span>&nbsp; No record by this ID. <br /><br /><a href="/">Go back to record list</a>
+                    
+                    <input type="hidden" id="date_today" value="<?=date('Y-m-d')?>">
+                    <input type="hidden" name="pat_id" id="pat_id" value="<?=$data['id']?>">
+
+                    <h2 class="uk-margin">John Appleseed</h2>
+                    
+                    <div class="uk-card uk-card-default" style="padding:20px;">
+
+                        <div class="uk-grid-divider uk-grid-small uk-margin" uk-grid>
+                            <div class="uk-width-1-3@m">
+                                
+                                <div uk-grid>
+                                    <div class="uk-width-2-3"><h4 class="uk-text-small uk-text-uppercase"><span class="uk-icon" uk-icon="icon:info"></span>&nbsp; Personal Details</h4></div>
+                                    <div class="uk-width-1-3 uk-text-right">
+                                        <a href="#modal-profile-edit" uk-toggle><span class="uk-label uk-label-primary">Edit</span></a>
+                                    </div>
+                                </div>
+                                <hr />
+
+                                <table class="uk-table uk-table-small">
+                                    <tbody>
+                                        <tr>
+                                            <td class="uk-text-right"><label class="uk-text-meta">Full Name</label></td>
+                                            <td><p class="uk-margin-remove">John Appleseed</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="uk-text-right"><label class="uk-text-meta">Age</label></td>
+                                            <td><p class="uk-margin-remove">55</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="uk-text-right"><label class="uk-text-meta">SSN</label></td>
+                                            <td><p class="uk-margin-remove">0000</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="uk-text-right"><label class="uk-text-meta">Address</label></td>
+                                            <td><p class="uk-margin-remove">Future Street</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="uk-text-right"><label class="uk-text-meta">Phone</label></td>
+                                            <td><p class="uk-margin-remove">555-255-221</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="uk-text-right"><label class="uk-text-meta">Height</label></td>
+                                            <td><p class="uk-margin-remove">152 cm</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="uk-text-right"><label class="uk-text-meta">Smoking</label></td>
+                                            <td><p class="uk-margin-remove">YES</p></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="uk-margin-large-top uk-text-center">
+                                    <a href="/" onclick="return confirm('Are you sure want to delete this record ?');" class="uk-button uk-button-danger uk-button-small"><span class="uk-icon" uk-icon="icon:trash"></span> &nbsp; DELETE THIS RECORD</a>
+                                </div>
+
+                            </div>
+                            <div class="uk-width-1-3@m">
+                                <div uk-grid>
+                                    <div class="uk-width-1-2"><h4 class="uk-text-small uk-text-uppercase"><span class="uk-icon" uk-icon="icon:history"></span>&nbsp; Appointments</h4></div>
+                                    <div class="uk-width-1-2 uk-text-right">
+                                        <a href="#modal-appt-add" uk-toggle><span class="uk-label uk-label-primary">Add</span></a>
+                                    </div>
+                                </div>
+                                <hr />
+                                
+                                        <div class="uk-card uk-margin-small-bottom" style="border:1px solid #CCC;">
+                                            <div class="uk-card-header uk-padding-small uk-background-primary">
+                                                <div class="uk-margin-collapse" uk-grid>
+                                                    <div class="uk-width-2-3" style="color:#FFF;">
+                                                        <p class="uk-margin-remove-bottom">
+                                                            3 July 2017
+                                                            &nbsp; <span style="color:#FFF; opacity:0.7; font-size:0.8em;">(few years ago)</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="uk-width-1-3 uk-text-right uk-light">
+                                                            <a href="#" data-appt-edit="" class="appt_btn_edit uk-icon" uk-icon="icon:pencil"></a>
+                                                            &nbsp;
+                                                            <a href="/" class="uk-icon" uk-icon="icon:trash" onclick="return confirm('Are you sure want to delete');"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="uk-card-body uk-padding-remove">
+
+                                                <table class="uk-table uk-table-divider">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="data_appt_list_td">
+                                                                <b>Meeting With</b><br />
+                                                                Anonymous
+                                                            </td>
+                                                            <td class="data_appt_list_td">
+                                                                <b>Time of Meeting</b><br />
+                                                                3:93 PM
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="data_appt_list_td">
+                                                                <b>Attendance</b><br />
+                                                                1,384 pax
+                                                            </td>
+                                                            <td class="data_appt_list_td">
+                                                                <b>Room Number</b><br />
+                                                                <span style="background-color:red; color:#FFF; border-radius:2px; padding:1px 5px;">3</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="data_appt_list_td">
+                                                                <b>Number of Waiter</b><br />
+                                                                7
+                                                            </td>
+                                                            <td class="data_appt_list_td">
+                                                                <b>Dancer</b><br />
+                                                                18
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="data_appt_list_td">
+                                                                <b>Menu Serve</b><br />
+                                                                5 packages
+                                                            </td>
+                                                            <td class="data_appt_list_td">
+                                                                <b>Music</b><br />
+                                                                YES
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    
+                                <p class="uk-text-muted uk-text-small">No record</p>
+                                
+                            </div>
+                            <div class="uk-width-1-3@m">
+                                <h4 class="uk-text-small uk-text-uppercase"><span class="uk-icon" uk-icon="icon:grid"></span>&nbsp; Graphs</h4>
+                                <hr />
+
+                                
+                                <div class="uk-margin-large-bottom uk-text-center">
+                                    <h1 class="uk-border-circle uk-text-middle uk-background-secondary" style="color:#FFF; width:100px; height:auto; padding:25px 0px; margin:0 auto;">133</h1>
+                                    <p class="uk-text-meta uk-margin-small-top" style="font-weight:600;">Current Seriousness</p>
+                                </div>
+
+
+                                    <div>
+                                        <canvas id="egfr_chart" width="320" height="200"></canvas>
+                                        <script>
+                                        new Chart(document.getElementById("egfr_chart"),{
+                                                "type":"line",
+                                                "data":{
+                                                    "labels":["January","February","March","April","May","June"],
+                                                    "datasets":[{
+                                                        "label":"Appointments",
+                                                        "data":[283,261,198,143,323,122],
+                                                        "fill":true,
+                                                        "backgroundColor": "rgba(217,0,0,0.3)",
+                                                        "borderColor":"rgb(217,0,0)",
+                                                        "lineTension":0.1,
+                                                        //"borderDash": [2, 2],
+                                                        "pointRadius": 5,
+                                                        "pointHoverRadius": 10
+                                                        }]
+                                                    },
+                                                "options":{
+                                                    scales: {
+                                                        xAxes: [{
+                                                            ticks: { autoSkip: false, maxRotation: 90, minRotation: 90 }
+                                                        }],
+                                                        yAxes: [{
+                                                            ticks: {
+                                                                suggestedMin: 0,
+                                                                max: 400
+                                                            }
+                                                        }]
+                                                    },
+                                                    layout: {
+                                                        padding: { right: 10 }
+                                                    },
+                                                    tooltips: {
+                                                        mode: 'index',
+                                                        intersect: false,
+                                                    },
+                                                }
+                                            });
+                                        </script>
+                                    </div>
+                                    
+                                    <div class="uk-placeholder uk-text-center uk-text-muted uk-text-small uk-text-uppercase">Data not available.</div>
+                                    
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="modal-profile-edit" uk-modal>
+                        <input type="hidden" name="id" class="modal-profile-edit-profile-id" value="<?=$data['id']?>">
+                        <div class="uk-modal-dialog">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <div class="uk-modal-header">
+                                <h2 class="uk-modal-title">Edit Profile</h2>
+                            </div>
+                            <div class="uk-modal-body">
+
+                                <form class="uk-form-stacked">
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="">Name</label>
+                                        <div class="uk-form-controls">
+                                            <input type="text" name="name" class="data-profile uk-input" value="" autofocus>
+                                        </div>
+                                    </div>
+
+                                    <div class="uk-margin-small" uk-grid>
+                                        <div class="uk-width-1-2">
+
+                                            <div class="">
+                                                <label class="uk-form-label" for="">SSN</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="text" name="ssn" class="data-profile uk-input" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="uk-width-1-2">
+                                            
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Phone</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="text" name="phone" class="data-profile uk-input" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="uk-margin-small" uk-grid>
+                                        <div class="uk-width-1-2">
+
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Address</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="text" name="address" class="data-profile uk-input" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="uk-width-1-2">
+                                            
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Height (cm)</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="text" name="height" class="data-profile uk-input" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="">Serious</label>
+                                        <div class="uk-form-controls">
+                                           
+                                            <label><input class="data-profile uk-checkbox" type="checkbox" name="serious_1" value="1"> &nbsp;One</label> &nbsp; &nbsp; 
+                                            <label><input class="data-profile uk-checkbox" type="checkbox" name="serious_2" value="2"> &nbsp;Two</label> &nbsp; &nbsp; 
+                                            <label><input class="data-profile uk-checkbox" type="checkbox" name="serious_3" value="3"> &nbsp;Three</label> &nbsp; &nbsp; 
+                                            <label><input class="data-profile uk-checkbox" type="checkbox" name="serious_4" value="4"> &nbsp;Four</label>
+
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                            <div class="uk-modal-footer uk-text-right">
+                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                <button class="uk-button uk-button-primary profile_btn_edit_save" type="button">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modal-appt-add" uk-modal>
+                        <div class="uk-modal-dialog">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <div class="uk-modal-header">
+                                <h2 class="uk-modal-title">Add Meeting</h2>
+                            </div>
+                            <div class="uk-modal-body">
+
+                                <form class="uk-form-stacked">
+
+                                    <div class="uk-margin-small" uk-grid>
+                                        <div class="uk-width-1-2">
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Date</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="text" name="date" class="data-appt data-appt-date uk-input date_picker" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="uk-width-1-2">&nbsp;</div>
+                                    </div>
+
+                                    <div class="uk-margin-top" uk-grid>
+                                        <div class="uk-width-1-4">
+
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Bump (pax)</label>
+                                                <div class="uk-form-controls" style="white-space: nowrap;">
+                                                    <input type="text" name="weight" class="data-appt uk-input" style="width:100px;" value="" autofocus>
+                                                    <br/><small>Between 1 to 4</small>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="uk-width-1-4">
+                                            
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Uno</label>
+                                                <div class="uk-form-controls" style="white-space: nowrap;">
+                                                    <input type="text" name="uno" class="data-appt uk-input" style="width:100px;" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="uk-width-1-4">
+
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Tress (%)</label>
+                                                <div class="uk-form-controls" style="white-space: nowrap;">
+                                                    <input type="text" name="tress" class="data-appt uk-input" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="uk-width-1-4">
+                                            
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Quatro</label>
+                                                <div class="uk-form-controls" style="white-space: nowrap;">
+                                                    <input type="text" name="quatro" class="data-appt uk-input" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="uk-margin-top" uk-grid>
+                                        <div class="uk-width-1-3">
+
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Sinco</label>
+                                                <div class="uk-form-controls" style="white-space: nowrap;">
+                                                    <input type="text" name="sinco" class="data-appt uk-input" style="width:100px;" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="uk-width-1-3">
+                                            
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Another Entry (%)</label>
+                                                <div class="uk-form-controls" style="white-space: nowrap;">
+                                                    <input type="text" name="another_entry" class="data-appt uk-input" style="width:100px;" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="uk-width-1-3">
+                                            
+                                            <div class="">
+                                                <label class="uk-form-label" for="">One More Entry (cm)</label>
+                                                <div class="uk-form-controls" style="white-space: nowrap;">
+                                                    <input type="text" name="ldl" class="data-appt uk-input" style="width:100px;" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                            <div class="uk-modal-footer uk-text-right">
+                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                <button class="uk-button uk-button-primary appt_btn_add_save" type="button">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                <!--END-->
+
+
+			<hr class="uk-margin-large-top" />
+
+            <footer class="uk-text-align-center uk-margin-large-bottom uk-text-muted uk-text-small">
+                &copy; 2018 Din Dang- All rights reserved.
+            </footer>
+
+		</div>
+
+	</body>
+</html>
+

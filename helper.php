@@ -1,5 +1,19 @@
 <?php
 
+//small helper function to return $uri. So the $uri always false if no value. Don't have to put isset app code logic
+function uri($pos){
+global $uri;
+    return (isset($uri[$pos])) ? $uri[$pos] : false ;
+}
+
+//another small helper, to avoid 'Undefined variable' error.
+function show($arr,$key){
+    $return = false;
+    if(isset($$arr)){
+        $return = (isset($$arr[$key])) ? $a : false;
+    }
+    return $return;
+}
 
 function cache_get($key){
 global $cache_dir;
@@ -452,7 +466,7 @@ function post_request($url, $data, $optional_headers = null){
 	return $response;
 }
 
-function nicetime($unix_date){
+function nice_time($unix_date){
 
     if(empty($unix_date)) {
         return "No date provided";

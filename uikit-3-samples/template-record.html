@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title>Template</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/png" href="/favicon.png">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!--uikit framework-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.11/css/uikit.min.css"/>
+		<link href="uikit" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.11/js/uikit.min.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.11/js/uikit-icons.min.js"></script>
+
+        <!--additional fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
+
+        <!--datepicker-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+        <!--chartjs-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+
+        <script>
+
+            $(document).ready(function(){
+
+                $('.date_picker').flatpickr({
+                    altInput: true,
+                    altFormat: "j F Y",
+                    dateFormat: "Y-m-d",
+                });
+                
+
+            });
+
+        </script>
+
+        <style>
+            * { font-family: 'Open Sans', 'Montserrat', sans-serif; }
+        </style>
+
+
+	</head>
+	<body>
+		
+		<div class="uk-container">
+
+            <nav class="uk-navbar-container uk-margin-top uk-visible@s" style="background:none;" uk-navbar>
+                <div class="uk-navbar-left">
+                    <ul class="uk-navbar-nav">
+                        <li>
+                            <h1 style="font-weight:200;" class="uk-margin-right">Application Title</h1>
+                        </li>
+                        <li class="uk-active"><a href="/">Home</a></li>
+                        <li><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Menu 3</a></li>
+                        <li><a href="#"><span uk-icon="icon: lock"></span>&nbsp; Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <h1 style="font-weight:200;" class="uk-margin-right uk-hidden@s">Application Title</h1>
+            <nav class="uk-navbar-container uk-hidden@s" style="background:none;" uk-navbar>
+                <div class="uk-navbar-left">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><a href="/">Home</a></li>
+                        <li><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Menu 3</a></li>
+                        <li><a href="?logout"><span uk-icon="icon: lock"></span>&nbsp; Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+			<hr />
+
+
+
+                <!--START-->
+
+
+
+
+
+                    <div uk-grid>
+                        <div class="uk-width-1-2">
+                            <h2>Records &nbsp; <a href="#modal-profile-add" uk-toggle><span class="uk-label uk-label-primary">Add New Entry</span></a> </h2>
+                            Showing 100 data from search result "search_keyword". <a href="">Reset search</a></p>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <form action="/" class="uk-search uk-search-default uk-align-right uk-margin-top">
+                                <input name="q" class="uk-search-input" type="search" placeholder="Search Name" value="">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="uk-overflow-auto uk-margin-top">
+                        <table class="uk-table uk-table-responsive uk-table-divider uk-table-hover uk-table-small">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th class="uk-text-center">SSN</th>
+                                    <th class="uk-text-center">Address</th>
+                                    <th class="uk-text-left">State</th>
+                                    <th class="uk-text-center">Country</th>
+                                    <th>Meeting Available</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                    <tr><td colspan="7"><div class="uk-margin-top"><span class="uk-icon" uk-icon="warning"></span>&nbsp; No record.</div></td></tr>
+                                   
+                                    <tr>
+                                        <td class="uk-text-muted uk-text-small">1</td>
+                                        <td><a href="/">John Appleseed</a></td>
+                                        <td class="uk-text-center">0987654321</td>
+                                        <td class="uk-text-center">Future Street</td>
+                                        <td class="uk-text-left">One More Line</td>
+                                        <td class="uk-text-center"><span class="uk-label uk-background-primary">5</span></td>
+                                        <td>Last year</td>
+                                        <td>
+                                            <button class="uk-button uk-button-primary"><span uk-icon="icon:info"></span> View</button>
+                                            <button class="uk-button uk-button-secondary"><span uk-icon="icon:pencil"></span> Edit</button>
+                                            <br />
+                                            <a href="/"><span class="uk-label">VIEW</span></a>
+                                            <a href=""><span class="uk-label uk-label-success">EDIT</span></a>
+                                        </td>
+                                    </tr>
+                                    
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="modal-profile-add" uk-modal>
+                        <div class="uk-modal-dialog">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <div class="uk-modal-header">
+                                <h2 class="uk-modal-title">Add Profile</h2>
+                            </div>
+                            <div class="uk-modal-body">
+
+                                <form class="uk-form-stacked">
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="">Full Name</label>
+                                        <div class="uk-form-controls">
+                                            <input type="text" name="name" class="data-profile uk-input" value="" autofocus>
+                                        </div>
+                                    </div>
+
+                                    <div class="uk-margin-small" uk-grid>
+                                        <div class="uk-width-1-2">
+
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Property</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="text" name="" class="data-profile uk-input" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="uk-width-1-2">
+                                            
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Property</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="text" name="" class="data-profile uk-input" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="uk-margin-small" uk-grid>
+                                        <div class="uk-width-1-2">
+
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Property</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="text" name="" class="data-profile uk-input" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="uk-width-1-2">
+                                            
+                                            <div class="">
+                                                <label class="uk-form-label" for="">Property</label>
+                                                <div class="uk-form-controls">
+                                                    <input type="text" name="" class="data-profile uk-input" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="">Numbers</label>
+                                        <div class="uk-form-controls">
+                                            <label><input class="data-profile uk-checkbox" type="checkbox" name="" value=""> &nbsp;ONE</label> &nbsp; &nbsp; 
+                                            <label><input class="data-profile uk-checkbox" type="checkbox" name="" value=""> &nbsp;TWO</label> &nbsp; &nbsp; 
+                                            <label><input class="data-profile uk-checkbox" type="checkbox" name="" value=""> &nbsp;FOUR</label>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                            <div class="uk-modal-footer uk-text-right">
+                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                <button class="uk-button uk-button-primary profile_btn_add_save" type="button">Save</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                <!--END-->
+
+
+			<hr class="uk-margin-large-top" />
+
+            <footer class="uk-text-align-center uk-margin-large-bottom uk-text-muted uk-text-small">
+                &copy; 2018 Din Dang- All rights reserved.
+            </footer>
+
+		</div>
+
+	</body>
+</html>
+

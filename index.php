@@ -16,20 +16,28 @@ date_default_timezone_set('UTC');
 
 include 'config.php';
 include 'db.php';
-include 'functions.php';
+include 'helper.php';
 include 'auth.php';
+include 'app.php';
 
-$req = $_SERVER['REQUEST_URI'];
-$req = explode('?',$req);
+$uri = $_SERVER['REQUEST_URI'];
+$uri = ($uri) ? explode('/', $uri) : false; //$uri starts at [1]
 
-if(isset($req[1])){
-	$req = $req[1];
-	$req = explode('/',$req);
-}else{
-	$req = array();
-}
+// $content = '';
+// $content .= date('j-M-Y H:i:s') . ' | ';
+// $content .= $xuser['username'] . ' | ';
+// $content .= $_SERVER['HTTP_CF_CONNECTING_IP'] . ' | ';
+// $content .= $_SERVER["REQUEST_METHOD"] . ' | ';
+// $content .= $_SERVER['REQUEST_URI'] . ' | ';
+// $content .= $_SERVER['HTTP_USER_AGENT'] . ' | ';
+// $content .= "\n";
 
-if( isset($req[0]) && $req[0] == 'api'){
+// $filename = 'visits.log';
+// $fwrite = fopen($filename, 'a') or die("can't open file");
+// fwrite($fwrite, $content);
+// fclose($fwrite);
+
+if(uri(1) == 'api'){
 	include 'api.php';
 }else{
 	include 'template.php';

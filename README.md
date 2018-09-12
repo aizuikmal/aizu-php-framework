@@ -1,22 +1,45 @@
 # aizu-php-framework
+ER====
 
 
--- Adminer 4.2.5 MySQL dump
+PATIENT'S PROFILE 
+Name
+Ic No
+Address
+Zone
+Tel No
+Height
 
-SET NAMES utf8;
-SET time_zone = '+00:00';
-SET foreign_key_checks = 0;
-SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+ COMORBIDS  
+( boleh  tick dalam box)
+DM  ☑
+HPT ☑
+HPL ☑
+Others : 
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(250) CHARACTER SET latin1 NOT NULL,
-  `name` varchar(250) NOT NULL,
-  `type` varchar(250) CHARACTER SET latin1 NOT NULL,
-  `last_login` int(11) NOT NULL,
-  `online_ping` int(11) DEFAULT '0',
-  `online_browser` text CHARACTER SET latin1,
-  `online_screen` text CHARACTER SET latin1,
-  `online_screen_section` text CHARACTER SET latin1,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ APPOINTMENT 
+Date of visit:
+
+Weight:
+
+BP:
+
+Creatinine:
+
+EGFR: ( kalau boleh generate graph of egfr from each visit) 
+
+CKD Stage: ( automatic based on egfr:
+ >90 :stage1
+60-90: stage 2
+45-60: stage 3a
+30- 45: stage 3b
+15-30: stage 4
+<15: stage 5 )
+
+Hba1c: 
+
+Total cholesterol:
+
+LDL:
+
+
